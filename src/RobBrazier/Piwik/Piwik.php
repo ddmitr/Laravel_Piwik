@@ -13,6 +13,7 @@ use RobBrazier\Piwik\Module\SEOModule;
 use RobBrazier\Piwik\Module\SitesManagerModule;
 use RobBrazier\Piwik\Module\VisitorInterestModule;
 use RobBrazier\Piwik\Module\VisitsSummaryModule;
+use RobBrazier\Piwik\Module\DevicesDetectionModule;
 use RobBrazier\Piwik\Query\Url;
 use RobBrazier\Piwik\Repository\ConfigRepository;
 use RobBrazier\Piwik\Repository\RequestRepository;
@@ -192,6 +193,18 @@ class Piwik
     public function getVisitsSummary()
     {
         return new VisitsSummaryModule($this->request);
+    }
+
+    /**
+     * Initialise the DevicesDetection Module.
+     *
+     * @see https://developer.matomo.org/api-reference/reporting-api#DevicesDetection for arguments
+     *
+     * @return DevicesDetectionModule
+     */
+    public function getDevicesDetection()
+    {
+        return new DevicesDetectionModule($this->request);
     }
 
     /**
