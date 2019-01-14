@@ -14,6 +14,7 @@ use RobBrazier\Piwik\Module\SitesManagerModule;
 use RobBrazier\Piwik\Module\VisitorInterestModule;
 use RobBrazier\Piwik\Module\VisitsSummaryModule;
 use RobBrazier\Piwik\Module\DevicesDetectionModule;
+use RobBrazier\Piwik\Module\UserCountryModule;
 use RobBrazier\Piwik\Query\Url;
 use RobBrazier\Piwik\Repository\ConfigRepository;
 use RobBrazier\Piwik\Repository\RequestRepository;
@@ -205,6 +206,18 @@ class Piwik
     public function getDevicesDetection()
     {
         return new DevicesDetectionModule($this->request);
+    }
+
+    /**
+     * Initialise the UserCountry Module.
+     *
+     * @see https://developer.matomo.org/api-reference/reporting-api#UserCountry for arguments
+     *
+     * @return UserCountryModule
+     */
+    public function getUserCountry()
+    {
+        return new UserCountryModule($this->request);
     }
 
     /**
