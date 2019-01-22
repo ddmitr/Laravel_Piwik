@@ -3,7 +3,7 @@
 namespace RobBrazier\Piwik\Module;
 
 /**
- * Class ReferrersModule.
+ * Class VisitTimeModule.
  *
  * @see https://developer.matomo.org/api-reference/reporting-api#VisitTime for arguments
  */
