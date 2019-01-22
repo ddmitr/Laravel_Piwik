@@ -9,6 +9,7 @@ use RobBrazier\Piwik\Module\EventsModule;
 use RobBrazier\Piwik\Module\LiveModule;
 use RobBrazier\Piwik\Module\ProviderModule;
 use RobBrazier\Piwik\Module\ReferrersModule;
+use RobBrazier\Piwik\Module\VisitTimeModule;
 use RobBrazier\Piwik\Module\SEOModule;
 use RobBrazier\Piwik\Module\SitesManagerModule;
 use RobBrazier\Piwik\Module\VisitorInterestModule;
@@ -146,6 +147,18 @@ class Piwik
     public function getReferrers()
     {
         return new ReferrersModule($this->request);
+    }
+
+    /**
+     * Initialise the VisitTime Module.
+     *
+     * @see https://developer.matomo.org/api-reference/reporting-api#VisitTime for arguments
+     *
+     * @return VisitTimeModule
+     */
+    public function getVisitTime()
+    {
+        return new VisitTimeModule($this->request);
     }
 
     /**
