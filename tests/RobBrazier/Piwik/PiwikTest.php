@@ -16,6 +16,9 @@ use RobBrazier\Piwik\Module\SEOModule;
 use RobBrazier\Piwik\Module\SitesManagerModule;
 use RobBrazier\Piwik\Module\VisitorInterestModule;
 use RobBrazier\Piwik\Module\VisitsSummaryModule;
+use RobBrazier\Piwik\Module\DevicesDetectionModule;
+use RobBrazier\Piwik\Module\UserCountryModule;
+use RobBrazier\Piwik\Module\VisitTimeModule;
 use RobBrazier\Piwik\Repository\ConfigRepository;
 use RobBrazier\Piwik\Repository\RequestRepository;
 use RobBrazier\Piwik\Request\RequestOptions;
@@ -127,6 +130,24 @@ class PiwikTest extends TestCase
     {
         $visitsSummary = $this->piwik->getVisitsSummary();
         $this->assertInstanceOf(VisitsSummaryModule::class, $visitsSummary);
+    }
+
+    public function testGetDevicesDetection()
+    {
+        $visitsSummary = $this->piwik->getDevicesDetection();
+        $this->assertInstanceOf(DevicesDetectionModule::class, $visitsSummary);
+    }
+
+    public function testGetUserCountry()
+    {
+        $visitsSummary = $this->piwik->getUserCountry();
+        $this->assertInstanceOf(UserCountryModule::class, $visitsSummary);
+    }
+
+    public function testGetVisitTime()
+    {
+        $visitsSummary = $this->piwik->getVisitTime();
+        $this->assertInstanceOf(VisitTimeModule::class, $visitsSummary);
     }
 
     public function testGetTag()
