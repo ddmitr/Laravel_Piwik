@@ -16,6 +16,7 @@ use RobBrazier\Piwik\Module\VisitorInterestModule;
 use RobBrazier\Piwik\Module\VisitsSummaryModule;
 use RobBrazier\Piwik\Module\DevicesDetectionModule;
 use RobBrazier\Piwik\Module\UserCountryModule;
+use RobBrazier\Piwik\Module\HeatmapSessionRecordingModule;
 use RobBrazier\Piwik\Query\Url;
 use RobBrazier\Piwik\Repository\ConfigRepository;
 use RobBrazier\Piwik\Repository\RequestRepository;
@@ -232,6 +233,19 @@ class Piwik
     {
         return new UserCountryModule($this->request);
     }
+
+    /**
+     * Initialise the HeatmapSessionRecording Module.
+     *
+     * @see https://developer.matomo.org/api-reference/reporting-api#HeatmapSessionRecording for arguments
+     *
+     * @return HeatmapSessionRecordingModule
+     */
+    public function getHeatmapSessionRecording()
+    {
+        return new HeatmapSessionRecordingModule($this->request);
+    }
+
 
     /**
      * Get javascript tag for use in tracking the website.
